@@ -33,7 +33,6 @@ jspm_packages/
 
 # Secret key stuff
 certs/
-config/config.json
 
 # Optional npm cache directory
 .npm

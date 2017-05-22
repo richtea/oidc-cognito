@@ -1,0 +1,11 @@
+{
+    "aws": {
+        "region":           "eu-west-1",
+        "identityPoolId":   "eu-west-1:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+    },
+    "oidc": {
+        "providerUrl":  "oidc.example.com/oidc",
+        "clientId":     "myclientid", 
+        "clientSecret": "myclientsecret"
+    }
+}
