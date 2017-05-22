@@ -1,0 +1,33 @@
+{
+  "name": "oidc-cognito",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "gulp test",
+    "debug": "node --debug=5858 --inspect ./bin/www"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.52.0",
+    "body-parser": "~1.15.2",
+    "bunyan": "^1.8.5",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "lodash": "^4.17.3",
+    "morgan": "~1.7.0",
+    "openid-client": "^1.10.0",
+    "pug": "~2.0.0-beta6",
+    "serve-favicon": "~2.3.0",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "gulp": "^3.9.1",
+    "gulp-tape": "0.0.9",
+    "mkdirp": "^0.5.1",
+    "tap-colorize": "^1.2.0",
+    "tape": "^4.6.3",
+    "yargs": "^7.1.0"
+  }
+}

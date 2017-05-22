@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+
+    "osx": {
+        "command": "/bin/bash",
+        "options": {
+            "cwd": "${workspaceRoot}"
+        },
+        "tasks": [
+            {
+                "taskName": "build",
+                "suppressTaskName": true,
+                "args": [ "-c", "./dockerTask.sh build" ],
+                "isBuildCommand": true,
+                "showOutput": "always"
+            },
+            {
+                "taskName": "runDebug",
+                "suppressTaskName": true,
+                "args": [ "-c", "./dockerTask.sh debug" ],
+                "isBuildCommand": false,
+                "showOutput": "always"
+            },
+            {
+                "taskName": "test",
+                "suppressTaskName": true,
+                "args": [ "-c", "./dockerTask.sh test" ],
+                "isTestCommand": true,
+                "showOutput": "always"
+            },
+            {
+                "taskName": "stop",
+                "suppressTaskName": true,
+                "args": [ "-c", "./dockerTask.sh stop" ],
+                "isTestCommand": false,
+                "showOutput": "always"
+            }
+        ]
+    }
+}
