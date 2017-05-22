@@ -28,4 +28,4 @@ As above, you might want to prevent accidental commits of your changes:
 
 ### 3. You're done!
 
-That's it - just run `npm start` to start the server, then browse to [https://localhost:8080](https://localhost:8080) to see it in action.
+That's it - just run `npm start` to start the server, then browse to [https://localhost:8000](https://localhost:8000) to see it in action.
