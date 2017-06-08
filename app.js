@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var forceSsl = require('./middlewares/force-ssl');
+var forceSsl = require('./lib/force-ssl');
 var bunyan = require('bunyan');
 var uuid = require('uuid/v4');
 
