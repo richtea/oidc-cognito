@@ -10,6 +10,7 @@ var app = require('../app');
 var debug = require('debug')('dockerexpress:server');
 var http = require('http');
 var https = require('https');
+var auth = require('../lib/authz_manager');
 
 /**
  * Get port from environment and store in Express.
@@ -32,18 +33,20 @@ var ssl_options = {
 
 const Issuer = require('openid-client').Issuer;
 
-app.locals.oidc = {
-    serverUri:      'https://' + config.oidc.providerUrl,
+var oidc_opts = {
+    providerUrl:    config.oidc.providerUrl,
     clientId:       config.oidc.clientId, 
     clientSecret:   config.oidc.clientSecret,
     callbackUri:    'https://localhost:8000/cb'
 };
 
+app.locals.oidc = oidc_opts;
+
 var server, secureServer;
 
-Issuer.discover(app.locals.oidc.serverUri)
+Issuer.discover('https://' + oidc_opts.providerUrl)
     .then(function (iss) {
-        app.locals.oidc.issuer = iss;
+        app.locals.authzManager = new auth.AuthorizationManager(iss, oidc_opts, config.aws, app.locals.globalLog);
 
         /**
          * Create HTTP server.
